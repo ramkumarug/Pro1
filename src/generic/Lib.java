@@ -5,6 +5,7 @@ import java.util.Properties;
 
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.ss.usermodel.WorkbookFactory;
+import org.testng.Reporter;
 
 public class Lib {
 public static String getPpt(String path,String key)
@@ -29,7 +30,7 @@ public static String getCellValue(String path,String sheet,int r,int c)
 	try
 	{
 		Workbook wb = WorkbookFactory.create(new FileInputStream(path));
-		v=wb.getSheet(sheet).getRow(r).getCell(c).toString();
+	
 		
 	}
 	catch(Exception e)
@@ -46,7 +47,7 @@ public static int getRowCount(String path,String sheet)
 	{
 		Workbook wb = WorkbookFactory.create(new FileInputStream(path));
 		rc=wb.getSheet(sheet).getLastRowNum();
-		
+		Reporter.log("hi",true);
 	}
 	catch(Exception e)
 	{
