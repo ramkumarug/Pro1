@@ -30,7 +30,7 @@ public static String getCellValue(String path,String sheet,int r,int c)
 	try
 	{
 		Workbook wb = WorkbookFactory.create(new FileInputStream(path));
-	
+	   v= wb.getSheet(sheet).getRow(r).getCell(c).toString();
 		
 	}
 	catch(Exception e)
